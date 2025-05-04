@@ -12,22 +12,15 @@
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/modid/icon.png",
 	"environment": "*",
 	"entrypoints": {
 	},
 	"mixins": [
-		"minej9.mixins.json",
-		{
-			"config": "minej9.client.mixins.json",
-			"environment": "client"
-		}
+		"minej9.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.16.14",
-		"minecraft": "~1.21.5",
-		"java": ">=21",
-		"fabric-api": "*",
-		"fabric-language-kotlin": ">=1.13.2+kotlin.2.1.20"
+		"minecraft": ">=1.18",
+		"java": ">=21"
 	}
 }
