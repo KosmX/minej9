@@ -11,11 +11,13 @@ public interface ForceNoopProfiler {
 
     @ModifyExpressionValue(method = "<clinit>", at = @At(value = "INVOKE", target = "Ljava/util/Optional;isPresent()Z"))
     private static boolean allowJfr(boolean original) {
-        try {
-            var a = WorldLoadFinishedEvent.TYPE; // this is going to fail if no JFR is present.
-            return true;
-        } catch (Throwable e) {
-            return false;
-        }
+        if (original) {
+            try {
+                var a = WorldLoadFinishedEvent.TYPE; // this is going to fail if no JFR is present.
+                return true;
+            } catch (Throwable e) {
+                return false;
+            }
+        } else return false;
     }
 }
