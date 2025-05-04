@@ -1,4 +1,5 @@
-# Fabric Example Mod
+# MineJ9
+Running MC on OpenJ9
 
 ## Setup
 
